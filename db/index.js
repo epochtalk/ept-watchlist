@@ -8,4 +8,6 @@ module.exports = {
   unwatchThread: require(path.normalize(__dirname + '/unwatchThread')),
   watchBoard: require(path.normalize(__dirname + '/watchBoard')),
   unwatchBoard: require(path.normalize(__dirname + '/unwatchBoard')),
+  isWatchingBoard: require(path.normalize(__dirname + '/isWatchingBoard')),
+  isWatchingThread: require(path.normalize(__dirname + '/isWatchingThread')),
 };
