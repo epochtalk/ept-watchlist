@@ -40,7 +40,6 @@ var ctrl = ['$anchorScroll', '$timeout', 'Session',  'Watchlist', 'pageData',
     // page count for each thread
     function threadPageCount(thread) {
       // user based UI
-      if (thread.has_new_post) { thread.title_class = 'bold'; }
       thread.page_count = Math.ceil(thread.post_count / ctrl.limit);
       ctrl.getPageKeysForThread(thread);
     }
