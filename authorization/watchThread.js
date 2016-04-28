@@ -11,13 +11,13 @@ module.exports = function watchThread(server, auth, threadId) {
     permission: 'watchlist.watchThread.allow'
   });
 
-  // Access to board with thread id
-  var access = server.authorization.build({
+  // read board
+  var read = server.authorization.build({
     error: Boom.notFound('Board Not Found'),
     type: 'dbValue',
     method: server.db.threads.getThreadsBoardInBoardMapping,
     args: [threadId, server.plugins.acls.getUserPriority(auth)]
   });
 
-  return Promise.all([allowed, access]);
+  return Promise.all([allowed, read]);
 };
