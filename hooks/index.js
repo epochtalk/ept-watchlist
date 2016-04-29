@@ -16,7 +16,21 @@ function watchingThread(request) {
   .then((watched) => { return { path: 'thread.watched', data: watched }; });
 }
 
+function watchThread(request) {
+  var threadId = request.payload.thread_id;
+  var userId = request.auth.credentials.id;
+
+  request.db.watchlist.isWatchingThread(threadId, userId)
+  .then(function(watching) {
+    if (!watching) { request.db.watchlist.watchThread(userId, threadId); }
+  });
+
+  return;
+}
+
+
 module.exports = [
   { path: 'threads.byBoard.pre', method: watchingBoard },
-  { path: 'posts.byThread.pre', method: watchingThread }
+  { path: 'posts.byThread.pre', method: watchingThread },
+  { path: 'posts.create.post', method: watchThread }
 ];
