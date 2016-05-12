@@ -71,7 +71,29 @@ var moderator = {
   unwatchThread: { allow: true }
 };
 
+var patroller = {
+  unread: { allow: true },
+  edit: { allow: true },
+  pageBoards: { allow: true },
+  watchBoard: { allow: true },
+  unwatchBoard: { allow: true },
+  pageThreads: { allow: true },
+  watchThread: { allow: true },
+  unwatchThread: { allow: true }
+};
+
 var user = {
+  unread: { allow: true },
+  edit: { allow: true },
+  pageBoards: { allow: true },
+  watchBoard: { allow: true },
+  unwatchBoard: { allow: true },
+  pageThreads: { allow: true },
+  watchThread: { allow: true },
+  unwatchThread: { allow: true }
+};
+
+var newbie = {
   unread: { allow: true },
   edit: { allow: true },
   pageBoards: { allow: true },
@@ -112,7 +134,9 @@ module.exports = {
     administrator: administrator,
     globalModerator: globalModerator,
     moderator: moderator,
+    patroller: patroller,
     user: user,
+    newbie: newbie,
     banned: banned,
     anonymous: {},
     private: {}
