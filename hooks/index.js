@@ -30,7 +30,7 @@ function watchThread(request) {
 
 
 module.exports = [
-  { path: 'threads.byBoard.pre', method: watchingBoard },
-  { path: 'posts.byThread.pre', method: watchingThread },
+  { path: 'threads.byBoard.parallel', method: watchingBoard },
+  { path: 'posts.byThread.parallel', method: watchingThread },
   { path: 'posts.create.post', method: watchThread }
 ];
