@@ -1,6 +1,6 @@
 {
   "name": "ept-watchlist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Default Epochtalk Watchlist",
   "main": "index.js",
   "scripts": {
